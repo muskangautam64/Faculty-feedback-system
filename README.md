@@ -1,8 +1,4 @@
-# Rate My Professors Project :)
-A project to advance our Natural Language Processing skills using a practical, real-world dataset: the comments on Rate My Professor. Here's a link to a quick video to showcase our [extension.](https://drive.google.com/file/d/1jrBeuaZ0NQyXyRWPuCV8DuvFsApgXPGp/view?usp=sharing)
 
-## Who are we?
-We are students at Texas A&M University, mostly studying Computer Science, who decided to make use of our summer and create something quite unique. 
 
 ### Why did we decide to do this?
 As college students, we noticed a few features missing from the Rate My Professors (RMP) website that we thought we could take upon ourselves to implement. We quickly realized, however, the depth of interesting things that could be done with such a robust and relatively untapped dataset. 
@@ -13,15 +9,6 @@ The current stage of the project consists mainly of a **sentiment classifier** o
 Sentiment analysis is one of many *classification* tasks in Natural Language Processing (NLP, the use of machine learning on written text data). To be quite honest, a binary classification task (classifying between two categories, like sentiment analysis) is considered by most to be among the simplest possible NLP tasks. However, being that we essentially started from scratch and accomplished everything in ~8 weeks, we are quite proud of our progress.
 
 Sentiment analysis involves the classification of text as either positive or negative sentiment, based on the words and context of the text. In our case, we look *only* at the text in an RMP review and classify it as conveying either positive or negative sentiment.
-
-# What did working on this project look like?
-In general, there were three main domains/areas related to programming that we were came face-to-face with throughout working on this project. Everyone ended up working a little with everything, but the main contributors to each are noted below.
-
-| *Domain*             | *Contributors*|
-|:--------------------:|:-------------:|
-| Web scraping         | Dien          |
-| Machine learning     | Ethan, Dien   |
-| Frontend development | Krish, Mohith |
 
 ## Web scraping
 Web scraping was used to obtain large samples of RMP comments and professor data by using Scrapy to make HTML requests to the RMP backend. 
@@ -87,8 +74,3 @@ documentation on the parameters we can set, and it produced great charts with mi
 |--------|-------|
 | <img src="https://github.com/EthanCherian/RMP/blob/master/screenshots/beforeChange.png"> | <img src="https://github.com/EthanCherian/RMP/blob/master/screenshots/afterChange2.png"> |
 
-# What's next?
-
-Unfortunately, we are all full time students, and this was just supposed to be a fun little project we worked on to increase our employability, so progress on this project slows considerably during college semesters. However, we do have a running list of features, etc. that we would like to implement, which you can find [here](https://github.com/EthanCherian/RMP-Wizard/blob/master/TODO.md). In general, we will kinda just pick whatever elements from the list that would be the easiest or most important to implement, but we do intend to get around to everything eventually. 
-
-Finally, we'd like to direct your attention [here](https://github.com/EthanCherian/RMP-Wizard/blob/master/PROGRESS.md), which outlines a lot of the early learning we did in figuring out the best way to even approach a project as broad and terrifying in scope as this one was, even though it only covers the machine learning aspect. Needless to say, we are extremely proud of the product we've created and will continue working to make it even better. :)
