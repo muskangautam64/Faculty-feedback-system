@@ -1,19 +1,13 @@
 
-
-### Why did we decide to do this?
-As college students, we noticed a few features missing from the Rate My Professors (RMP) website that we thought we could take upon ourselves to implement. We quickly realized, however, the depth of interesting things that could be done with such a robust and relatively untapped dataset. 
-### What is it we've done here?
-The current stage of the project consists mainly of a **sentiment classifier** of comments on RMP. To that end, we have also constructed a Google Chrome extension that injects our findings onto RMP's website itself in an appealing manner. We currently have plans to extend this project into topic modeling and text summarization, though these endeavors promise a far greater challenge.
-
 #### What is *sentiment analysis*?
-Sentiment analysis is one of many *classification* tasks in Natural Language Processing (NLP, the use of machine learning on written text data). To be quite honest, a binary classification task (classifying between two categories, like sentiment analysis) is considered by most to be among the simplest possible NLP tasks. However, being that we essentially started from scratch and accomplished everything in ~8 weeks, we are quite proud of our progress.
+Sentiment analysis is one of many *classification* tasks in Natural Language Processing (NLP, the use of machine learning on written text data). To be quite honest, a binary classification task (classifying between two categories, like sentiment analysis) is considered by most to be among the simplest possible NLP tasks. However, being that we essentially started from scratch and accomplished everything in ~12 weeks, we are quite proud of our progress.
 
 Sentiment analysis involves the classification of text as either positive or negative sentiment, based on the words and context of the text. In our case, we look *only* at the text in an RMP review and classify it as conveying either positive or negative sentiment.
 
 ## Web scraping
 Web scraping was used to obtain large samples of RMP comments and professor data by using Scrapy to make HTML requests to the RMP backend. 
 
-The scrape was started over a period of 2 weeks in mid-july during off traffic hours. POST requests were made to the underlying GraphQL database in RMP to collect about 500k professors and 8 million comments. Due to the nature of the scrape, professors added earlier in the site's lifetime would be scraped leading to a dataset with a disproportionate amount of reviews from previous years.
+The scrape was started over a period of 2 weeks in mid-july during off traffic hours. POST requests were made to the underlying GraphQL database in RMP to collect ratings and comments about professors. Due to the nature of the scrape, professors added earlier in the site's lifetime would be scraped leading to a dataset with a disproportionate amount of reviews from previous years.
 
 <img src = "https://github.com/EthanCherian/RMP/blob/master/screenshots/date-dist.png" height = 300, width = 350>
 
@@ -41,8 +35,7 @@ Early on, we stuck almost entirely to *Multinomial Naive Bayes* (other than brie
 
 * Naive Bayes has very little in the way of optimizations we can make to the model itself, so all forward progress had to come from preprocessing. Logistic Regression, on the other hand, has a number of hyperparameters that we could tune to improve our accuracy in classification.
 * The results produced by Naive Bayes were relatively difficult to interpret: beyond the sentiment itself, we couldn't see into the mind of the model, so to speak. By contrast, Logistic Regression provides a few mathematical ways of determining what the model was thinking when it made a particular classification
-  * This point in particular played into our decision to switch, due to a new feature we were looking to implement that would be made a lot easier with this information. 
-    * *see [version 1.1 in our patchnotes](https://github.com/EthanCherian/RMP-Wizard/blob/master/PATCHNOTES.md#v11-oct-25-2022)*
+  * This point in particular played into our decision to switch, due to a new feature we were looking to implement that would be made a lot easier with this information.
   
 In the end, we switched to Logistic Regression, performed some hyperparameter tuning, and ended up with our final model. This model ended up with around **92.35%** accuracy in predicting sentiment, an impressive feat all things considered.
 
