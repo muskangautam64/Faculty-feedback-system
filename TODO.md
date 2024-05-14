@@ -1,4 +1,4 @@
-# Our TODO list:
+
 
 ## General stuff
 * Migrate from JavaScript to TypeScript
